@@ -1,21 +1,120 @@
-# Calculadora de Consumo de Energía
+# ⚡ Calculadora de Costo de Energía
 
-He creado una página web moderna y responsive para calcular tus gastos de energía eléctrica.
+Portal con múltiples calculadoras de costo de energía eléctrica para ayudarte a estimar y optimizar tu consumo.
 
-## Archivos Creados
-1.  **index.html**: La estructura de la página.
-2.  **style.css**: Estilos modernos con efecto "Glassmorphism" (vidrio esmerilado) y fondo animado.
-3.  **script.js**: La lógica para realizar los cálculos en tiempo real.
+## 🌐 Demo en Vivo
 
-## Características
--   **Cálculo Automático**: Ingresa el costo por kWh y tu consumo mensual para ver el costo total al instante.
--   **Desglose**: Muestra el costo estimado por día y proyección anual.
--   **Calculadora Personalizada**: Una sección especial para calcular el costo en un tiempo específico (días, horas, semanas).
--   **Calculadora de Porcentaje**: Nueva función para calcular qué porcentaje de tu factura total representa un monto específico (o viceversa, calcular el monto dado un porcentaje).
--   **Formato Inteligente**: Los campos de entrada ahora formatean automáticamente los números con puntos de mil (ej. 1.000.000) para facilitar la lectura.
--   **Diseño Responsive**: Se adapta perfectamente a celulares y computadoras.
+Visita la aplicación desplegada en GitHub Pages:
+- **Portal Principal**: [https://moshua53.github.io/Calculadora_costo_energia/](https://moshua53.github.io/Calculadora_costo_energia/)
+- **Calculadora Principal**: [https://moshua53.github.io/Calculadora_costo_energia/app_1/](https://moshua53.github.io/Calculadora_costo_energia/app_1/)
+- **Calculadora Avanzada**: [https://moshua53.github.io/Calculadora_costo_energia/app_2/](https://moshua53.github.io/Calculadora_costo_energia/app_2/)
 
-## Nota sobre las Unidades
-Mencionaste "kilobytes" en tu solicitud, pero asumí que te referías a **Kilowatts-hora (kWh)**, que es la unidad estándar para medir el consumo de energía eléctrica. La calculadora utiliza esta unidad.
+## 📁 Estructura del Proyecto
 
-Para ver la página, simplemente abre el archivo `index.html` en tu navegador.
+```
+Calculadora_costo_energia/
+├── index.html              # Página principal del portal
+├── README.md              # Este archivo
+├── app_1/                 # Calculadora Principal
+│   ├── index.html
+│   ├── script.js
+│   ├── style.css
+│   └── README.md
+└── app_2/                 # Calculadora Avanzada
+    ├── index.html
+    ├── script.js
+    ├── style.css
+    └── README.md
+```
+
+## 🚀 Características
+
+### Calculadora Principal (app_1)
+- Cálculo de consumo energético por dispositivo
+- Estimación de costos mensuales
+- Interfaz intuitiva y moderna
+
+### Calculadora Avanzada (app_2)
+- Funcionalidades adicionales
+- Análisis detallado de consumo
+- Reportes personalizados
+
+## 🛠️ Tecnologías Utilizadas
+
+- **HTML5**: Estructura semántica
+- **CSS3**: Diseño moderno con gradientes y animaciones
+- **JavaScript**: Lógica de cálculo y interactividad
+- **GitHub Pages**: Hosting y despliegue
+
+## 📦 Instalación Local
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/Moshua53/Calculadora_costo_energia.git
+```
+
+2. Navega al directorio:
+```bash
+cd Calculadora_costo_energia
+```
+
+3. Abre el archivo `index.html` en tu navegador o usa un servidor local:
+```bash
+# Con Python 3
+python -m http.server 8000
+
+# Con Node.js (npx)
+npx serve
+```
+
+4. Visita `http://localhost:8000` en tu navegador
+
+## 🌍 Despliegue en GitHub Pages
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages:
+
+1. Ve a la configuración del repositorio en GitHub
+2. Navega a **Settings** > **Pages**
+3. En **Source**, selecciona la rama `main` y la carpeta `/ (root)`
+4. Guarda los cambios
+5. GitHub Pages generará automáticamente las URLs para acceder a tu sitio
+
+### Rutas Disponibles
+
+Una vez desplegado, tendrás acceso a:
+- `/` - Portal principal con enlaces a las aplicaciones
+- `/app_1/` - Primera calculadora
+- `/app_2/` - Segunda calculadora
+
+## 🎨 Personalización
+
+Cada aplicación (`app_1` y `app_2`) es independiente y puede ser personalizada modificando sus archivos:
+- `index.html` - Estructura HTML
+- `style.css` - Estilos y diseño
+- `script.js` - Lógica y funcionalidad
+
+## 📝 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 👤 Autor
+
+**Moshua53**
+- GitHub: [@Moshua53](https://github.com/Moshua53)
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Por favor:
+1. Haz fork del proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📧 Contacto
+
+Si tienes preguntas o sugerencias, no dudes en abrir un issue en el repositorio.
+
+---
+
+⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub!
