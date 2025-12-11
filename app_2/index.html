@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Consumo de Energía</title>
+    <meta name="description" content="Calcula tu gasto de energía eléctrica mensual y porcentajes de factura">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="glass-card">
+            <header>
+                <h1>⚡ Calculadora de Energía</h1>
+                <p>Controla tu consumo y gastos eléctricos</p>
+            </header>
+
+            <!-- Sección 1: Cálculo de Gasto Mensual -->
+            <section class="calc-section">
+                <h2>Calcular Gasto Mensual</h2>
+
+                <div class="input-group">
+                    <label for="costPerKwh">Costo por kWh ($)</label>
+                    <div class="input-wrapper">
+                        <span class="icon">💲</span>
+                        <input type="text" id="costPerKwh" placeholder="0.00" inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="monthlyKwh">Consumo Mensual (kWh)</label>
+                    <div class="input-wrapper">
+                        <span class="icon">⚡</span>
+                        <input type="text" id="monthlyKwh" placeholder="0" inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="result-card main-result">
+                    <span class="label">Gasto Mensual Total</span>
+                    <span class="value" id="monthlyTotal">$0.00</span>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Sección 2: Calculadora de Porcentaje -->
+            <section class="calc-section">
+                <h2>Calcular Porcentaje de Factura</h2>
+
+                <div class="input-group">
+                    <label for="totalBill">Costo Total de la Factura ($)</label>
+                    <div class="input-wrapper">
+                        <span class="icon">📄</span>
+                        <input type="text" id="totalBill" placeholder="0.00" inputmode="decimal">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="percentage">Porcentaje (%)</label>
+                    <div class="input-wrapper">
+                        <span class="icon">%</span>
+                        <input type="number" id="percentage" placeholder="0" min="0" max="100">
+                    </div>
+                </div>
+
+                <div class="result-card secondary-result">
+                    <span class="label">Equivale a</span>
+                    <span class="value" id="percentageResult">$0.00</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
