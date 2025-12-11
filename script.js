@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Costo interno fijo por kWh (NO se muestra al usuario)
+    const INTERNAL_COST_PER_KWH = 2000;
+
     // Elements - Monthly Calculator
-    const costPerKwhInput = document.getElementById('costPerKwh');
     const monthlyKwhInput = document.getElementById('monthlyKwh');
     const monthlyTotalEl = document.getElementById('monthlyTotal');
 
@@ -73,12 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Calculate Monthly Total
+    // Calculate Monthly Total (usa costo interno fijo)
     const calculateMonthly = () => {
-        const costPerKwh = parseNumber(costPerKwhInput.value);
         const monthlyKwh = parseNumber(monthlyKwhInput.value);
-
-        const total = costPerKwh * monthlyKwh;
+        const total = INTERNAL_COST_PER_KWH * monthlyKwh;
         monthlyTotalEl.textContent = formatCurrency(total);
     };
 
@@ -92,11 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Event Listeners - Monthly Calculator
-    costPerKwhInput.addEventListener('input', (e) => {
-        handleInput(e);
-        calculateMonthly();
-    });
-
     monthlyKwhInput.addEventListener('input', (e) => {
         handleInput(e);
         calculateMonthly();
