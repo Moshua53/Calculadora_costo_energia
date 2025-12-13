@@ -14,8 +14,3 @@ He creado una página web moderna y responsive para calcular tus gastos de energ
 -   **Calculadora de Porcentaje**: Nueva función para calcular qué porcentaje de tu factura total representa un monto específico (o viceversa, calcular el monto dado un porcentaje).
 -   **Formato Inteligente**: Los campos de entrada ahora formatean automáticamente los números con puntos de mil (ej. 1.000.000) para facilitar la lectura.
 -   **Diseño Responsive**: Se adapta perfectamente a celulares y computadoras.
-
-## Nota sobre las Unidades
-Mencionaste "kilobytes" en tu solicitud, pero asumí que te referías a **Kilowatts-hora (kWh)**, que es la unidad estándar para medir el consumo de energía eléctrica. La calculadora utiliza esta unidad.
-
-Para ver la página, simplemente abre el archivo `index.html` en tu navegador.
