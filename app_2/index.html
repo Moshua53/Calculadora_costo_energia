@@ -2,87 +2,96 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Consumo de Energía</title>
-    <meta name="description" content="Calcula tu gasto de energía eléctrica mensual y porcentajes de factura">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Energía (Tarifa configurable)</title>
+  <meta name="description" content="Calcula gasto mensual de energía con tarifa configurable y equivalencias por porcentaje de factura." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="background-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="back-link" href="../" aria-label="Volver al portal">Volver</a>
+      <div class="title">
+        <h1>Calculadora de energía</h1>
+        <p>Tarifa configurable. Estimación mensual y porcentaje de factura.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card" role="region" aria-label="Calculadoras">
+      <section class="calc-section" aria-label="Gasto mensual">
+        <div class="section-head">
+          <h2>Gasto mensual</h2>
+          <p class="hint">Ingresa tu tarifa y tu consumo mensual para estimar el costo total.</p>
+        </div>
+
+        <div class="grid">
+          <div class="input-group">
+            <label for="costPerKwh">Costo por kWh</label>
+            <div class="input-wrapper">
+              <span class="icon" aria-hidden="true">$</span>
+              <input type="text" id="costPerKwh" placeholder="0.00" inputmode="decimal" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="monthlyKwh">Consumo mensual</label>
+            <div class="input-wrapper">
+              <span class="icon" aria-hidden="true">kWh</span>
+              <input type="text" id="monthlyKwh" placeholder="0" inputmode="decimal" autocomplete="off" />
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card main-result" aria-live="polite">
+          <span class="label">Total estimado</span>
+          <span class="value" id="monthlyTotal">$0.00</span>
+        </div>
+      </section>
+
+      <div class="divider" role="separator" aria-hidden="true"></div>
+
+      <section class="calc-section" aria-label="Porcentaje de factura">
+        <div class="section-head">
+          <h2>Porcentaje de factura</h2>
+          <p class="hint">Calcula cuánto representa un porcentaje sobre el total de tu factura.</p>
+        </div>
+
+        <div class="grid">
+          <div class="input-group">
+            <label for="totalBill">Total de la factura</label>
+            <div class="input-wrapper">
+              <span class="icon" aria-hidden="true">$</span>
+              <input type="text" id="totalBill" placeholder="0.00" inputmode="decimal" autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="percentage">Porcentaje</label>
+            <div class="input-wrapper">
+              <span class="icon" aria-hidden="true">%</span>
+              <input type="number" id="percentage" placeholder="0" min="0" max="100" />
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card secondary-result" aria-live="polite">
+          <span class="label">Equivalencia</span>
+          <span class="value" id="percentageResult">$0.00</span>
+        </div>
+      </section>
     </div>
 
-    <main class="container">
-        <div class="glass-card">
-            <header>
-                <h1>⚡ Calculadora de Energía</h1>
-                <p>Controla tu consumo y gastos eléctricos</p>
-            </header>
+    <p class="footer-note">Los resultados son aproximados y dependen de tu factura y proveedor.</p>
+  </main>
 
-            <!-- Sección 1: Cálculo de Gasto Mensual -->
-            <section class="calc-section">
-                <h2>Calcular Gasto Mensual</h2>
-
-                <div class="input-group">
-                    <label for="costPerKwh">Costo por kWh ($)</label>
-                    <div class="input-wrapper">
-                        <span class="icon">💲</span>
-                        <input type="text" id="costPerKwh" placeholder="0.00" inputmode="decimal">
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="monthlyKwh">Consumo Mensual (kWh)</label>
-                    <div class="input-wrapper">
-                        <span class="icon">⚡</span>
-                        <input type="text" id="monthlyKwh" placeholder="0" inputmode="decimal">
-                    </div>
-                </div>
-
-                <div class="result-card main-result">
-                    <span class="label">Gasto Mensual Total</span>
-                    <span class="value" id="monthlyTotal">$0.00</span>
-                </div>
-            </section>
-
-            <div class="divider"></div>
-
-            <!-- Sección 2: Calculadora de Porcentaje -->
-            <section class="calc-section">
-                <h2>Calcular Porcentaje de Factura</h2>
-
-                <div class="input-group">
-                    <label for="totalBill">Costo Total de la Factura ($)</label>
-                    <div class="input-wrapper">
-                        <span class="icon">📄</span>
-                        <input type="text" id="totalBill" placeholder="0.00" inputmode="decimal">
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <label for="percentage">Porcentaje (%)</label>
-                    <div class="input-wrapper">
-                        <span class="icon">%</span>
-                        <input type="number" id="percentage" placeholder="0" min="0" max="100">
-                    </div>
-                </div>
-
-                <div class="result-card secondary-result">
-                    <span class="label">Equivale a</span>
-                    <span class="value" id="percentageResult">$0.00</span>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

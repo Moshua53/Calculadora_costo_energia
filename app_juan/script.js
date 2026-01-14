@@ -6,11 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthlyKwhInput = document.getElementById('monthlyKwh');
     const monthlyTotalEl = document.getElementById('monthlyTotal');
 
-    // Elements - Percentage Calculator
-    const totalBillInput = document.getElementById('totalBill');
-    const percentageInput = document.getElementById('percentage');
-    const percentageResultEl = document.getElementById('percentageResult');
-
     // Format Currency
     const formatCurrency = (amount) => {
         return new Intl.NumberFormat('en-US', {
@@ -82,30 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
         monthlyTotalEl.textContent = formatCurrency(total);
     };
 
-    // Calculate Percentage
-    const calculatePercentage = () => {
-        const totalBill = parseNumber(totalBillInput.value);
-        const percentage = parseFloat(percentageInput.value) || 0;
-
-        const result = (totalBill * percentage) / 100;
-        percentageResultEl.textContent = formatCurrency(result);
-    };
-
-    // Event Listeners - Monthly Calculator
     monthlyKwhInput.addEventListener('input', (e) => {
         handleInput(e);
         calculateMonthly();
     });
 
-    // Event Listeners - Percentage Calculator
-    totalBillInput.addEventListener('input', (e) => {
-        handleInput(e);
-        calculatePercentage();
-    });
-
-    percentageInput.addEventListener('input', calculatePercentage);
-
     // Initial calculation
     calculateMonthly();
-    calculatePercentage();
 });
